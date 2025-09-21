@@ -69,6 +69,9 @@ void            high_score_init(GameStatus* currentStatus)
 {
     FILE* high_score_file = fopen("INI.txt", "r");
 
+    //if (high_score_file == NULL)
+    //    return;
+
     for (int i = 0; i < MAX_LINE; i++)
     {
         fgets(currentStatus->HighScore[i], MAX_DIGIT, high_score_file);

@@ -4,6 +4,8 @@
 #include "shield.h"
 #include "UFO.h"
 #include "animation.h"
+
+
 #define MAX_LINE 5
 #define MAX_DIGIT 6
 
