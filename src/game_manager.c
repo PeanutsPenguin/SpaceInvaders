@@ -67,10 +67,10 @@ ObjectList*     object_list_init_gameobjects(GameObject* player, GameObject* pro
 /*Initialize the values of the HighScore array with the values of the INI.txt file*/
 void            high_score_init(GameStatus* currentStatus)
 {
-    FILE* high_score_file = fopen("INI.txt", "r");
+    FILE* high_score_file = fopen("assets/INI.txt", "r");
 
-    //if (high_score_file == NULL)
-    //    return;
+    if (high_score_file == NULL)
+        return;
 
     for (int i = 0; i < MAX_LINE; i++)
     {
