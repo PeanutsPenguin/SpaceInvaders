@@ -238,6 +238,8 @@ bool        check_collision_enemy(GameObject enemy, GameObject* projectile)
             return false;
         }
     }
+
+    return false;
 }
 
 /*Checks if each enemy projectile collides with a game object*/

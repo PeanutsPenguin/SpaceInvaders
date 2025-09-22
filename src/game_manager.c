@@ -129,8 +129,13 @@ void            game_update(ObjectList* list, int screenwidth, GameStatus* curre
     // {
     //     list->projectile->score +=100;
     // }
+
     currentStatus->deltaTime = GetFrameTime();
+
+
+
     currentStatus->coolDown += currentStatus->deltaTime;
+
     if(currentStatus->coolDown > 2)
     {
         currentStatus->coolDown = 0;
@@ -151,17 +156,20 @@ void            game_update(ObjectList* list, int screenwidth, GameStatus* curre
 void            add_delta(ObjectList* list, GameStatus* currentStatus)
 {
     list->enemies.cd += currentStatus->deltaTime;
+
     if (list->enemies.cd > 1.01)
     {
         list->enemies.cd = 0;
         list->bonus.UFO->score += 1;
     }
+
     if (currentStatus->canPlayerShoot < 1)
     {
         currentStatus->canPlayerShoot += currentStatus->deltaTime;
     }
 
     int rand_time = Randoms(15, 25);
+
     if (list->bonus.UFO->score >= rand_time && list->enemies.enemy[0][0].rect.y > 90)
     {
         list->bonus.UFO->score = 0;
