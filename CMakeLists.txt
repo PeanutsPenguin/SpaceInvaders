@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.22.1)
 
-project(directories)
+project(SpaceInvadersRemake)
 
 # Define variables for source and include directories
 set(SOURCE_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -62,3 +62,7 @@ target_include_directories(SpaceInvaders PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/inc
 target_include_directories(SpaceInvaders PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/raylib/include) #(#include <raylib/raudio.h> and not #include <raudio.h>)
 
 target_link_libraries(SpaceInvaders raylib)
+
+if(MSVC)
+		set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT SpaceInvaders)
+endif()
